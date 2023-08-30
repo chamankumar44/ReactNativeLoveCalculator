@@ -67,7 +67,7 @@ const alertPolyfill = (title, description, options) => {
 
     return (
         <View style={{ flex: 1, justifyContent: 'centre', alignItems: 'center', marginTop: 20, padding: 5 }}>
-            <Text style={{ fontSize: 25, fontWeight: 'bold' }} > Welcome To Love Calculator </Text>
+            <Text style={{ fontSize: 25, fontWeight: 'bold' }} > Welcome To Love Calculator App</Text>
             <SafeAreaView style={{ marginTop: 50 , marginBottom : 20}}>
                 <Text style={{ fontSize: 18 }} > Please Enter First Name </Text>
                 <TextInput
