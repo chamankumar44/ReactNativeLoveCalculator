@@ -127,27 +127,30 @@ import MyProfile from "./src/mobile/pages/MyProfile";
 import CurrentNews from "./src/mobile/pages/CurrentNews";
 import LoveCalculator from "./src/mobile/pages/LoveCalculator";
 import Feed from "./src/mobile/pages/Feed";
+import AppContainer from "./src/testing/navigations/AppNavigation";
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 const App = () => {
   return (
-    <NavigationContainer>
+    <AppContainer />
 
-      <Drawer.Navigator initialRouteName="HomePage" >
-        <Drawer.Screen name="HomePage" component={HomePage} />
-        <Drawer.Screen name="Feed" component={Feed} />
-        <Drawer.Screen name="CurrentNews" component={CurrentNews} />
-        <Drawer.Screen name="LoveCalculator" component={LoveCalculator} />
-      </Drawer.Navigator>
+    // <NavigationContainer>
 
-      {/* <Stack.Navigator > */}
-        <Stack.Screen name='HomePage' component={HomePage} />
-        <Stack.Screen name='MyProfile' component={MyProfile} options={{ title: 'Chaman Panchal' }} />
-        <Stack.Screen name='CurrentNews' component={CurrentNews} options={{ title: 'Current Affairs' }} />
-        <Stack.Screen name='LoveCalculator' component={LoveCalculator} options={{ title: 'Calculate Love' }} />
-        <Stack.Screen name='Feed' component={Feed} options={{ title: 'Feed' }} />
-      {/* </Stack.Navigator> */}
-    </NavigationContainer>
+    //   <Drawer.Navigator initialRouteName="HomePage" >
+    //     <Drawer.Screen name="HomePage" component={HomePage} />
+    //     <Drawer.Screen name="Feed" component={Feed} />
+    //     <Drawer.Screen name="CurrentNews" component={CurrentNews} />
+    //     <Drawer.Screen name="LoveCalculator" component={LoveCalculator} />
+    //   </Drawer.Navigator>
+
+    //   {/* <Stack.Navigator > */}
+    //     <Stack.Screen name='HomePage' component={HomePage} />
+    //     <Stack.Screen name='MyProfile' component={MyProfile} options={{ title: 'Chaman Panchal' }} />
+    //     <Stack.Screen name='CurrentNews' component={CurrentNews} options={{ title: 'Current Affairs' }} />
+    //     <Stack.Screen name='LoveCalculator' component={LoveCalculator} options={{ title: 'Calculate Love' }} />
+    //     <Stack.Screen name='Feed' component={Feed} options={{ title: 'Feed' }} />
+    //   {/* </Stack.Navigator> */}
+    // </NavigationContainer>
   )
 };
 export default App;

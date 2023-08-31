@@ -1,10 +1,37 @@
 {
   "name": "AwesomeProject",
   "displayName": "AwesomeProject",
-
+  "slug": "instafood-recipes-app",
+  "description": "React Native Recipes App Demo. Download source code for free at https://www.instamobile.io . You can also check out the Swift version at https://www.iosapptemplates.com and the Kotlin version at https://www.instakotlin.com .",
+  "privacy": "public",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "icon": "./assets/icon.png",
+  "userInterfaceStyle": "light",
+  "splash": {
+    "image": "./assets/splash.png",
+    "resizeMode": "cover",
+    "backgroundColor": "#ffffff"
+  },
   "react-native-google-mobile-ads": {
     "android_app_id": "ca-app-pub-8118826265420904~3547625742"
-  
+  },
+  "updates": {
+    "fallbackToCacheTimeout": 0
+  },
+  "assetBundlePatterns": [
+    "**/*"
+  ],
+  "ios": {
+    "supportsTablet": true
+  },
+  "android": {
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/adaptive-icon.png",
+      "backgroundColor": "#FFFFFF"
+    }
+  },
+  "web": {
+    "favicon": "./assets/favicon.png"
   }
-  
 }

@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomePage from "./src/mobile/pages/HomePage";
 import HomePageWeb from './src/web/HomePageWeb';
+import AppContainer from "./src/testing/navigations/AppNavigation";
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -11,14 +12,16 @@ const App = () => {
 
 
   return(
-    <NavigationContainer>
+    <AppContainer />
 
-<Stack.Navigator >
-  {/* <Stack.Screen name='HomePage' component={HomePage} /> */}
-  <Stack.Screen name='HomePageWeb' component={HomePageWeb} />
+//     <NavigationContainer>
 
-</Stack.Navigator>
-    </NavigationContainer>
+// <Stack.Navigator >
+//   {/* <Stack.Screen name='HomePage' component={HomePage} /> */}
+//   <Stack.Screen name='HomePageWeb' component={HomePageWeb} />
+
+// </Stack.Navigator>
+//     </NavigationContainer>
   )
 
   // return (
