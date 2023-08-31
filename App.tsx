@@ -121,19 +121,32 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomePage from "./src/view/HomePage";
-import SecondPage from "./src/view/SecondPage";
-import { Text, View } from "react-native";
-
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import HomePage from "./src/mobile/pages/HomePage";
+import MyProfile from "./src/mobile/pages/MyProfile";
+import CurrentNews from "./src/mobile/pages/CurrentNews";
+import LoveCalculator from "./src/mobile/pages/LoveCalculator";
+import Feed from "./src/mobile/pages/Feed";
 const Stack = createNativeStackNavigator();
-
+const Drawer = createDrawerNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator >
+
+      <Drawer.Navigator initialRouteName="HomePage" >
+        <Drawer.Screen name="HomePage" component={HomePage} />
+        <Drawer.Screen name="Feed" component={Feed} />
+        <Drawer.Screen name="CurrentNews" component={CurrentNews} />
+        <Drawer.Screen name="LoveCalculator" component={LoveCalculator} />
+      </Drawer.Navigator>
+
+      {/* <Stack.Navigator > */}
         <Stack.Screen name='HomePage' component={HomePage} />
-        {/* <Stack.Screen name='SecondPage' component={SecondPage} /> */}
-      </Stack.Navigator>
+        <Stack.Screen name='MyProfile' component={MyProfile} options={{ title: 'Chaman Panchal' }} />
+        <Stack.Screen name='CurrentNews' component={CurrentNews} options={{ title: 'Current Affairs' }} />
+        <Stack.Screen name='LoveCalculator' component={LoveCalculator} options={{ title: 'Calculate Love' }} />
+        <Stack.Screen name='Feed' component={Feed} options={{ title: 'Feed' }} />
+      {/* </Stack.Navigator> */}
     </NavigationContainer>
   )
 };

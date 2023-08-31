@@ -1,6 +1,6 @@
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native'
-import HomePage from "../view/HomePage";
+import HomePage from "../mobile/pages/HomePage";
 
 
 export default function AppNavigation (){

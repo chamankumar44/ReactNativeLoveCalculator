@@ -2,11 +2,11 @@ import React from "react";
 import { Text, View, Button, Alert, ProgressBarAndroidBase } from "react-native";
 import { SafeAreaView, StyleSheet, TextInput } from 'react-native';
 import { useState, useEffect } from 'react';
-import ProgressView from "./ProgressView";
+import ProgressView from "../../view/ProgressView";
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
 
-const HomePageWeb = ()=>{
-
+const LoveCalculator = () => {
 
     const [text_first, onChangeTextFirst] = React.useState('');
     const [text_second, onChangeTextSecond] = React.useState('');
@@ -15,23 +15,18 @@ const HomePageWeb = ()=>{
     const [loading, setLoading] = useState(true);
     const [state, setState] = useState('');
     const [shouldShow, setShouldShow] = useState(false);
+    // const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-xxxxxxxxxxxxx/yyyyyyyyyyyyyy';
+    const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-8118826265420904/5678965061';
 
-
-const alertPolyfill = (title, description, options) => {
-    
-    const result = window.confirm([title, description].filter(Boolean).join('\n'))
-
-}
-    
     const onPressSubmit = () => {
 
         console.log(" M clicked ");
         console.log("text_first " + text_first);
         console.log("text_second" + text_second);
         if (text_first == '')
-        alertPolyfill('Blank Input Field','Please Enter First Name ','c') 
+            Alert.alert('Please Enter First Name')
         else if (text_second == '')
-        alertPolyfill('Blank Input Field','Please Enter Second Name ','c')   
+            Alert.alert('Please Enter Second Name')
         else {
             setShouldShow(true)
             getResult()
@@ -56,6 +51,11 @@ const alertPolyfill = (title, description, options) => {
             setShouldShow(false)
             setData(response)
 
+            // .then(response => result.json())
+            // .then(result => console.log("Result is : " + result))
+            // .then(setData())
+            // .catch(error => console.log('error', error));
+
         } catch (error) {
             console.error(error);
         } finally {
@@ -67,8 +67,8 @@ const alertPolyfill = (title, description, options) => {
 
     return (
         <View style={{ flex: 1, justifyContent: 'centre', alignItems: 'center', marginTop: 20, padding: 5 }}>
-            <Text style={{ fontSize: 25, fontWeight: 'bold' }} > Welcome To Love Calculator App</Text>
-            <SafeAreaView style={{ marginTop: 50 , marginBottom : 20}}>
+            <Text style={{ fontSize: 25, fontWeight: 'bold' }} > Welcome To Love Calculator </Text>
+            <SafeAreaView style={{ marginTop: 50, marginBottom: 20 }}>
                 <Text style={{ fontSize: 18 }} > Please Enter First Name </Text>
                 <TextInput
                     style={styles.input}
@@ -82,19 +82,19 @@ const alertPolyfill = (title, description, options) => {
                     onChangeText={onChangeTextSecond}
                     value={text_second}
                     placeholder="Second Name"
-                    keyboardType="text"
+                    keyboardType="numeric"
                 />
             </SafeAreaView>
             {/* <View style = {{ marginTop: 20}}> </View> */}
-          
-            <Button styles = {{marginTop : 130}}
+
+            <Button styles={{ marginTop: 130 }}
                 title="Calculate Love"
                 onPress={() => {
                     console.log(" shouldShow " + shouldShow);
                     console.log(" data value  " + data);
                     onPressSubmit()
                 }} />
-                
+
 
             {
                 shouldShow ? (
@@ -106,17 +106,27 @@ const alertPolyfill = (title, description, options) => {
             {
                 data != "" ? <View>
                     <ProgressView visible={false} />
-                    <Text style={{ fontSize: 30,marginTop : 30 }}>{"First Name : "} {<Text style={{ fontWeight: 'bold' }}> {data.fname}</Text>}</Text>
+                    <Text style={{ fontSize: 30, marginTop: 30 }}>{"First Name : "} {<Text style={{ fontWeight: 'bold' }}> {data.fname}</Text>}</Text>
                     <Text style={{ fontSize: 30 }}>{"Second Name : "} {<Text style={{ fontWeight: 'bold' }}> {data.sname}</Text>}</Text>
                     <Text style={{ fontSize: 30 }}>{"Love Percentage : "} {<Text style={{ fontWeight: 'bold' }}> {data.percentage + "%"}</Text>}</Text>
                     <Text style={{ fontSize: 30 }}>{"Best Result : "} {<Text style={{ fontWeight: 'bold' }}> {data.result}</Text>}</Text>
                 </View> : null
             }
 
+            <View   style={styles.bottomView} >
+                <BannerAd
+                    unitId={adUnitId}
+                    size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+                    requestOptions={{
+                        requestNonPersonalizedAdsOnly: true,
+                    }}
+                />
+            </View>
+
         </View>
     )
-}
 
+}
 
 const styles = StyleSheet.create({
     input: {
@@ -131,6 +141,16 @@ const styles = StyleSheet.create({
         flex: 1,
         margin: 10,
     },
+    bottomView: {
+        width: '100%',
+        height: 50,
+        backgroundColor: '#EE5407',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute', //Here is the trick
+        bottom: 0, //Here is the trick
+      },
 });
 
-export default HomePageWeb;
+export default LoveCalculator
+

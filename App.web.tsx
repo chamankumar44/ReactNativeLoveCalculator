@@ -2,9 +2,8 @@ import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomePage from "./src/view/HomePage";
-import SecondPage from './src/view/SecondPage';
-import HomePageWeb from './src/view/HomePageWeb';
+import HomePage from "./src/mobile/pages/HomePage";
+import HomePageWeb from './src/web/HomePageWeb';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
