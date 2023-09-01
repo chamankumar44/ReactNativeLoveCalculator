@@ -1,23 +1,25 @@
-import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import * as React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import HomePageWeb from './src/view/HomePageWeb';
+import HomePageWebNew from './src/pages/web/HomePageWebNew';
+import Jobs from './src/common/jobs';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
-  const [count, setCount] = useState(0);
 
 
-  return(
+
+  return (
     <NavigationContainer>
 
-<Stack.Navigator >
-  {/* <Stack.Screen name='HomePage' component={HomePage} /> */}
-  <Stack.Screen name='HomePageWeb' component={HomePageWeb} />
+      <Stack.Navigator >
+        {/* <Stack.Screen name='HomePage' component={HomePage} /> */}
+        <Stack.Screen name='HomePageWeb' component={HomePageWebNew} />
+        <Stack.Screen name="Jobs" component={Jobs} />
 
-</Stack.Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   )
 

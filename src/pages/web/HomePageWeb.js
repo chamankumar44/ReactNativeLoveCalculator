@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, View, Button, Alert, ProgressBarAndroidBase } from "react-native";
-import { SafeAreaView, StyleSheet, TextInput } from 'react-native';
+import { ImageBackground, StyleSheet,Text, View, Button, Alert, ProgressBarAndroidBase } from "react-native";
+import { SafeAreaView, TextInput } from 'react-native';
 import { useState, useEffect } from 'react';
-import ProgressView from "./ProgressView";
+import ProgressView from "../../view/ProgressView";
 
 
 const HomePageWeb = ()=>{
@@ -64,11 +64,18 @@ const alertPolyfill = (title, description, options) => {
         }
     };
 
+    const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
 
     return (
         <View style={{ flex: 1, justifyContent: 'centre', alignItems: 'center', marginTop: 20, padding: 5 }}>
-            <Text style={{ fontSize: 25, fontWeight: 'bold' }} > Welcome To Love Calculator World</Text>
-            <SafeAreaView style={{ marginTop: 50 , marginBottom : 20}}>
+            <ImageBackground source={image} resizeMode="center" style={styles.header}>
+                <View style={styles.image}>
+                    
+                    Hello </View>
+
+                 </ImageBackground>
+
+            <SafeAreaView style={{ marginTop: 150 , marginBottom : 20}}>
                 <Text style={{ fontSize: 18 }} > Please Enter First Name </Text>
                 <TextInput
                     style={styles.input}
@@ -85,6 +92,8 @@ const alertPolyfill = (title, description, options) => {
                     keyboardType="text"
                 />
             </SafeAreaView>
+
+           
             {/* <View style = {{ marginTop: 20}}> </View> */}
           
             <Button styles = {{marginTop : 130}}
@@ -112,6 +121,7 @@ const alertPolyfill = (title, description, options) => {
                     <Text style={{ fontSize: 30 }}>{"Best Result : "} {<Text style={{ fontWeight: 'bold' }}> {data.result}</Text>}</Text>
                 </View> : null
             }
+         
 
         </View>
     )
@@ -119,11 +129,21 @@ const alertPolyfill = (title, description, options) => {
 
 
 const styles = StyleSheet.create({
+
     input: {
         height: 40,
         margin: 12,
         borderWidth: 1,
         padding: 10,
+    },
+    header : {
+        width: '100%',
+        height: 50,
+        backgroundColor: '#EE5407',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute', //Here is the trick
+        top : 0 //Here is the trick
     },
     container: {
         justifyContent: 'center',
@@ -131,6 +151,21 @@ const styles = StyleSheet.create({
         flex: 1,
         margin: 10,
     },
+    container: {
+        flex: 1,
+      },
+      image: {
+        flex: 3,
+        justifyContent: 'center',
+      },
+      text: {
+        color: 'white',
+        fontSize: 42,
+        lineHeight: 84,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        backgroundColor: '#000000c0',
+      },
 });
 
 export default HomePageWeb;
