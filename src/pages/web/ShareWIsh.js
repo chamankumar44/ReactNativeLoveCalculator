@@ -3,18 +3,16 @@ import { ImageBackground, StyleSheet, Text, View, Button, Alert } from "react-na
 import { SafeAreaView, TextInput } from 'react-native';
 import { useState, useEffect } from 'react';
 
-const Utility = ({ navigation }) => {
-
+const ShareWish = ({ navigation }) => {
 
     return (
-
         <View style={{ flex: 1, justifyContent: 'centre', alignItems: 'center', marginTop: 20, padding: 5 }}>
             <View style={styles.header}>
                 <Button title="Home" color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('Home', { name: 'Home' })}></Button>
                 <View style={{ width: 10 }} > </View>
-                <Button title="TopNews" color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('TopNews', { name: 'TopNews' })}></Button>
-                <View style={{ width: 10 }} > </View>
                 <Button title="Jobs" color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('Jobs', { name: 'Jobs' })}></Button>
+                <View style={{ width: 10 }} > </View>
+                <Button title="Utility " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('Utility', { name: 'Utility' })}></Button>
                 <View style={{ width: 10 }} > </View>
                 <Button title="Tutorials " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('Tutorials', { name: 'Tutorials' })}></Button>
                 <View style={{ width: 10 }} > </View>
@@ -22,18 +20,12 @@ const Utility = ({ navigation }) => {
                 <View style={{ width: 10 }} > </View>
                 <Button title="Contact Us " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('ContactUs', { name: 'ContactUs' })}></Button>
                 <View style={{ width: 10 }} > </View>
-            </View >
-            <View style={styles.rightlayout}>
-                <Button title="Love Calculator"  color='#rgba(52, 52, 52, 0.9)' onPress={() => navigation.navigate('LoveCalculator', { name: 'LoveCalculator' })}></Button>
-                <View style={{ height: 10 }} > </View>
-                
-                <Button title="Share Wish" color='#rgba(52, 52, 52, 0.9)' onPress={() => navigation.navigate('ShareWish', { name: 'ShareWish' })}></Button>
-                <View style={{ width: 10 }} > </View>
-
             </View>
         </View>
     )
 }
+``
+
 
 
 const styles = StyleSheet.create({
@@ -47,18 +39,6 @@ const styles = StyleSheet.create({
 
     },
 
-    rightlayout: {
-        width: '50',
-        height: '100',
-        flexDirection: 'column-reverse',
-        backgroundColor: '#rgba(52, 52, 52, 0.0)',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        alignSelf:'flex-end',
-    marginTop : 60
-       
-
-    },
     input: {
         height: 40,
         margin: 12,
@@ -82,7 +62,9 @@ const styles = StyleSheet.create({
         flex: 1,
         margin: 10,
     },
-
+    container: {
+        flex: 1,
+    },
     image: {
         flex: 3,
         justifyContent: 'center',
@@ -96,4 +78,4 @@ const styles = StyleSheet.create({
         backgroundColor: '#000000c0',
     },
 });
-export default Utility;
+export default ShareWish;

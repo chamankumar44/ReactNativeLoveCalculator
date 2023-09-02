@@ -68,11 +68,8 @@ const alertPolyfill = (title, description, options) => {
 
     return (
         <View style={{ flex: 1, justifyContent: 'centre', alignItems: 'center', marginTop: 20, padding: 5 }}>
-            <ImageBackground source={image} resizeMode="center" style={styles.header}>
-                <View style={styles.image}>
-                    
-                    Hello </View>
-
+            <ImageBackground  resizeMode="center" style={styles.bgimage}>
+             {/* <ImageBackground source={require('../../assets/image_love.png')} resizeMode="center" style={styles.bgimage}> */}
                  </ImageBackground>
 
             <SafeAreaView style={{ marginTop: 150 , marginBottom : 20}}>
@@ -129,6 +126,16 @@ const alertPolyfill = (title, description, options) => {
 
 
 const styles = StyleSheet.create({
+
+    bgimage : {
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#EE540755',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute', //Here is the trick
+        top : 0 //Here is the trick
+    },
 
     input: {
         height: 40,

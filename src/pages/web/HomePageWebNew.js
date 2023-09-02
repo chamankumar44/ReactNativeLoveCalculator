@@ -26,7 +26,7 @@ const HomePageWebNew = ({navigation}) => {
                 <Button title="Contact Us " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() =>navigation.navigate('ContactUs', {name: 'ContactUs'})}></Button>
             </View>
 
-<View><Text>Hello Home</Text></View>
+
         </View>
     )
 }

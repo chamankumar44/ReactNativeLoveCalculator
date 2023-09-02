@@ -13,6 +13,7 @@ import Tutorials from './src/common/Tutorials';
 import Utility from './src/common/Utility';
 import Blogs from './src/common/Blogs';
 import LoveCalculator from './src/pages/web/LoveCalculator';
+import ShareWish from './src/pages/web/ShareWIsh';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Stack.Screen name="Utility" component={Utility} />
         <Stack.Screen name="Blogs" component={Blogs} />
         <Stack.Screen name="LoveCalculator" component={LoveCalculator} />
+        <Stack.Screen name="ShareWish" component={ShareWish} />
 
       </Stack.Navigator>
     </NavigationContainer>
