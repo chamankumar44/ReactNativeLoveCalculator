@@ -3,14 +3,15 @@ import { ImageBackground, StyleSheet, Text, View, Button, Alert } from "react-na
 import { SafeAreaView, TextInput } from 'react-native';
 import { useState, useEffect } from 'react';
 
-const MyProfile = () => {
+const Blogs = ({navigation}) => {
 
 
     return (
-
         <View style={{ flex: 1, justifyContent: 'centre', alignItems: 'center', marginTop: 20, padding: 5 }}>
             <View style={styles.header}>
                 <Button title="Home" color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('Home', { name: 'Home' })}></Button>
+                <View style={{ width: 10 }} > </View>
+                <Button title="TopNews" color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('TopNews', { name: 'TopNews' })}></Button>
                 <View style={{ width: 10 }} > </View>
                 <Button title="Jobs" color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('Jobs', { name: 'Jobs' })}></Button>
                 <View style={{ width: 10 }} > </View>
@@ -18,9 +19,8 @@ const MyProfile = () => {
                 <View style={{ width: 10 }} > </View>
                 <Button title="Tutorials " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('Tutorials', { name: 'Tutorials' })}></Button>
                 <View style={{ width: 10 }} > </View>
-                <Button title="Blogs " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('Blogs', { name: 'Blogs' })}></Button>
-                <View style={{ width: 10 }} > </View>
                 <Button title="Contact Us " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('ContactUs', { name: 'ContactUs' })}></Button>
+                <View style={{ width: 10 }} > </View>
             </View>
         </View>
     )
@@ -75,5 +75,5 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         backgroundColor: '#000000c0',
     },
-});
-export default MyProfile;
+}); 
+export default Blogs;

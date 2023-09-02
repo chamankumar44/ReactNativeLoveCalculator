@@ -1,14 +1,16 @@
-import React from "react";
-import { View,Text } from "react-native";
+import React, { Component } from 'react';
+import { ImageBackground, StyleSheet, Text, View, Button, Alert } from "react-native";
+import { SafeAreaView, TextInput } from 'react-native';
+import { useState, useEffect } from 'react';
 
-const  Jobs = () =>{
+const  Education = () =>{
 
 
     return (
 
         <View>
-            <Text> This is Job Page </Text>
+            <Text> This is Education Page </Text>
         </View>
     )
 }
-export default Jobs;
+export default Education;

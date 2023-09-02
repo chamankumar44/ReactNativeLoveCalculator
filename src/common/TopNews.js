@@ -3,11 +3,9 @@ import { ImageBackground, StyleSheet, Text, View, Button, Alert } from "react-na
 import { SafeAreaView, TextInput } from 'react-native';
 import { useState, useEffect } from 'react';
 
-const MyProfile = () => {
-
+const TopNews = ({ navigation }) => {
 
     return (
-
         <View style={{ flex: 1, justifyContent: 'centre', alignItems: 'center', marginTop: 20, padding: 5 }}>
             <View style={styles.header}>
                 <Button title="Home" color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('Home', { name: 'Home' })}></Button>
@@ -21,10 +19,14 @@ const MyProfile = () => {
                 <Button title="Blogs " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('Blogs', { name: 'Blogs' })}></Button>
                 <View style={{ width: 10 }} > </View>
                 <Button title="Contact Us " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() => navigation.navigate('ContactUs', { name: 'ContactUs' })}></Button>
+                <View style={{ width: 10 }} > </View>
             </View>
         </View>
     )
 }
+``
+
+
 
 const styles = StyleSheet.create({
     button: {
@@ -76,4 +78,4 @@ const styles = StyleSheet.create({
         backgroundColor: '#000000c0',
     },
 });
-export default MyProfile;
+export default TopNews;

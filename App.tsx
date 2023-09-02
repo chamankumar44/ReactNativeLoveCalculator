@@ -124,6 +124,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomePage from "./src/view/HomePage";
 import SecondPage from "./src/view/SecondPage";
 import { Text, View } from "react-native";
+import HomePageWebNew from "./src/pages/web/HomePageWebNew";
 
 const Stack = createNativeStackNavigator();
 
@@ -132,6 +133,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator >
         <Stack.Screen name='HomePage' component={HomePage} />
+        {/* <Stack.Screen name='HomePageWebNew' component={HomePageWebNew} /> */}
         {/* <Stack.Screen name='SecondPage' component={SecondPage} /> */}
       </Stack.Navigator>
     </NavigationContainer>

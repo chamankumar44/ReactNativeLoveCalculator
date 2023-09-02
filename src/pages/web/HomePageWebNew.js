@@ -1,78 +1,32 @@
 import React, { Component } from 'react';
-import { ImageBackground, StyleSheet, Text, View, Button, Alert, ProgressBarAndroidBase } from "react-native";
+import { ImageBackground, StyleSheet, Text, View, Button, Alert } from "react-native";
 import { SafeAreaView, TextInput } from 'react-native';
 import { useState, useEffect } from 'react';
-import ProgressView from "../../view/ProgressView";
-// import { useNavigation } from '@react-navigation/native';
-// import MarqueeView from 'react-native-marquee-view';
-// import { MarqueeView } from 'react-native-marquee-view'
-// import MarqueeText from 'react-native-marquee';
-import Jobs from '../../common/jobs';
+
 
 const HomePageWebNew = ({navigation}) => {
 
 
-    const [text_first, onChangeTextFirst] = React.useState('');
-    const [text_second, onChangeTextSecond] = React.useState('');
-    const [number, onChangeNumber] = React.useState('');
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [state, setState] = useState('');
-    const [shouldShow, setShouldShow] = useState(false);
     // const navigation = useNavigation(); 
-
-
-   
-
 
 
     return (
         <View style={{ flex: 1, justifyContent: 'centre', alignItems: 'center', marginTop: 20, padding: 5 }}>
             <View style={styles.header}>
-                <Button title="Jobs" color='#rgba(52, 52, 52, 0.0)' style={styles.button} 
-                
-                onPress={() =>
-                    navigation.navigate('Jobs', {name: 'Jobs'})
-                 }>
-
-                </Button>
+                <Button title="Jobsss" color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() =>navigation.navigate('Jobs', {name: 'Jobs'})}></Button>
                 <View style={{ width: 10 }} > </View>
-                <Button title="News" color='#rgba(52, 52, 52, 0.0)' style={styles.button}></Button>
+                <Button title="News" color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() =>navigation.navigate('TopNews', {name: 'TopNews'})}></Button>
                 <View style={{ width: 10 }} > </View>
-                <Button title="Utility " color='#rgba(52, 52, 52, 0.0)' style={styles.button}></Button>
+                <Button title="Utility " color='#rgba(52, 52, 52, 0.0)'style={styles.button} onPress={() =>navigation.navigate('Utility', {name: 'Utility'})}></Button>
                 <View style={{ width: 10 }} > </View>
-                <Button title="Tutorials " color='#rgba(52, 52, 52, 0.0)' ></Button>
+                <Button title="Tutorials " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() =>navigation.navigate('Tutorials', {name: 'Tutorials'})}></Button>
                 <View style={{ width: 10 }} > </View>
-                <Button title="Blogs " color='#rgba(52, 52, 52, 0.0)'></Button>
+                <Button title="Blogs " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() =>navigation.navigate('Blogs', {name: 'Blogs'})}></Button>
                 <View style={{ width: 10 }} > </View>
-                <Button title="Contact Us " color='#rgba(52, 52, 52, 0.0)' ></Button>
+                <Button title="Contact Us " color='#rgba(52, 52, 52, 0.0)' style={styles.button} onPress={() =>navigation.navigate('ContactUs', {name: 'ContactUs'})}></Button>
             </View>
 
-
-            {/* <View style={styles.container}>
-                <MarqueeText
-                    style={{ fontSize: 24 }}
-                    speed={1}
-                    marqueeOnStart={true}
-                    loop={true}
-                    delay={1000}
-                >
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry and typesetting industry.
-                </MarqueeText>
-            </View> */}
-
-         
-                {/* <MarqueeView
-                    style={{
-                        backgroundColor: 'blue',
-                        width: 200,
-                    }}>
-                    <View style={{ backgroundColor: 'red' }}>
-                        <Text>This is demo content</Text>
-                    </View>
-                </MarqueeView> */}
-
-
+<View><Text>Hello Home</Text></View>
         </View>
     )
 }
